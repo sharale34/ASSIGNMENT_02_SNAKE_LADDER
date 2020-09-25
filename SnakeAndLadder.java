@@ -6,7 +6,10 @@ public class SnakeAndLadder {
 		
 		//variables
 		int position=0;
-		System.out.println("Let's Play A Game.");
-		System.out.println("Current position of a player :"+position);
+		
+		//computation
+		int roll=(int) (Math.floor(Math.random() * 6) + 1);
+		System.out.println("Number on the dice :"+roll);
 	}
+
 }
