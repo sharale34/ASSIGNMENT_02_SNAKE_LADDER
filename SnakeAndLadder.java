@@ -12,7 +12,7 @@ public class SnakeAndLadder {
 		
 		//variables
 		int position=0;
-	
+	    int count=0;
 		//Computation
         while(position!=100)
         {
@@ -40,9 +40,11 @@ public class SnakeAndLadder {
 			}
 			System.out.println("Position :"+position);
 		}
+		count++;
         }
         System.out.println("Final position of the player: "+position);
 		System.out.println("The Player gets exact winning position 100.");	
+		System.out.println("The Number of times dice was played to win the game: "+count);
 	}
 
 }
