@@ -14,7 +14,7 @@ public class SnakeAndLadder {
 		int position=0;
 	
 		//Computation
-        while(position>=0 && position<100)
+        while(position!=100)
         {
 		int roll=(int) (Math.floor(Math.random() * 6) + 1);
 		System.out.println("number on dice :"+roll);
@@ -41,7 +41,8 @@ public class SnakeAndLadder {
 			System.out.println("Position :"+position);
 		}
         }
-		System.out.println("Player has Won the Game.");	
+        System.out.println("Final position of the player: "+position);
+		System.out.println("The Player gets exact winning position 100.");	
 	}
 
 }
