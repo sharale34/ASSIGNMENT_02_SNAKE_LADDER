@@ -12,22 +12,24 @@ public class SnakeAndLadder {
 		
 		//variables
 		int position=0;
-
-		//computation
+	
+		//Computation
+        while(position>=0 && position<100)
+        {
 		int roll=(int) (Math.floor(Math.random() * 6) + 1);
-		System.out.println("number on dice: "+roll);
+		System.out.println("number on dice :"+roll);
 		
 		int option = (int) (Math.floor(Math.random() * 3) + 1);
-		System.out.println("option: "+option);
+		System.out.println("option :"+option);
 		if(option == NO_PLAY)
 		{
 			position=position;
-			System.out.println("Position of Player: "+position);
+			System.out.println("Position :"+position);
 		}
 		else if(option == LADDER)
 		{
 			position+=roll;
-			System.out.println("Position of Player: "+position);
+			System.out.println("Position :"+position);
 		}
 		else
 		{
@@ -36,8 +38,10 @@ public class SnakeAndLadder {
 			{
 				position=0;
 			}
-			System.out.println("Position of Player: "+position);
+			System.out.println("Position :"+position);
 		}
+        }
+		System.out.println("Player has Won the Game.");	
 	}
 
 }
