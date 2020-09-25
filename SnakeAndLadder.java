@@ -11,11 +11,16 @@ public class SnakeAndLadder {
 		// TODO Auto-generated method stub
 		
 		//variables
-		int position=0;
-	    int count=0;
+		int position1=0;
+		int position2=0;
+	    int current=0;
+	    
 		//Computation
-        while(position!=100)
+        while(position1!=100 && position2!=100)
         {
+        if(current%2==0)
+        {
+        current=position1;
 		int roll=(int) (Math.floor(Math.random() * 6) + 1);
 		System.out.println("number on dice :"+roll);
 		
@@ -23,28 +28,78 @@ public class SnakeAndLadder {
 		System.out.println("option :"+option);
 		if(option == NO_PLAY)
 		{
-			position=position;
-			System.out.println("Position :"+position);
+			position1=position1;
+			System.out.println("Position :"+position1);
 		}
 		else if(option == LADDER)
 		{
-			position+=roll;
-			System.out.println("Position :"+position);
+			position1+=roll;
+			while(option != LADDER)
+			{
+			roll=(int)(Math.floor(Math.random() * 6) + 1);
+			position1+=roll;
+			}
+			System.out.println("Position :"+position1);
 		}
 		else
 		{
-			position-=roll;
-			if(position<0) 
+			position1-=roll;
+			if(position1<0) 
 			{
-				position=0;
+				position1=0;
 			}
-			System.out.println("Position :"+position);
+			System.out.println("Position :"+position1);
 		}
-		count++;
         }
-        System.out.println("Final position of the player: "+position);
-		System.out.println("The Player gets exact winning position 100.");	
-		System.out.println("The Number of times dice was played to win the game: "+count);
+        else
+        {
+        	current=position2;
+        	int roll=(int) (Math.floor(Math.random() * 6) + 1);
+    		System.out.println("number on dice :"+roll);
+    		
+    		int option = (int) (Math.floor(Math.random() * 3) + 1);
+    		System.out.println("option :"+option);
+    		if(option == NO_PLAY)
+    		{
+    			position2=position2;
+    			System.out.println("Position :"+position2);
+    		}
+    		else if(option == LADDER)
+    		{
+    			position2+=roll;
+    			while(option != LADDER)
+    			{
+    			roll=(int)(Math.floor(Math.random() * 6) + 1);
+    			position2+=roll;
+    			}
+    			System.out.println("Position :"+position2);
+    		}
+    		else
+    		{
+    			position2-=roll;
+    			if(position2<0) 
+    			{
+    				position2=0;
+    			}
+    			System.out.println("Position :"+position2);
+    		}
+        	
+        }
+        current++;
+        }
+        if(position1>position2)
+        {
+        	System.out.println("Player1 has Won the Game");
+        }
+        else if(position1<position2)
+        {
+        	System.out.println("Player2 has Won the Game");
+        }
+        else
+        {
+        	System.out.println("Player1 and Player2 are Winner");
+        }
+		
 	}
 
 }
